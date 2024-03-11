@@ -24,7 +24,7 @@ or [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) (should already be av
 
 ### Setup & Run
 
-- Clone this repository: `git clone https://github.com/autodesk-platform-services/aps-tradetapp-table`
+- Clone this repository: `git clone https://github.com/autodesk-platform-services/aps-tradetapp-table.git`
 - Go to the project folder: `cd aps-tradetapp-table`
 - Install Node.js dependencies: `npm install`
 - Open the project folder in a code editor of your choice
