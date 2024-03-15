@@ -20,7 +20,8 @@
     <span class="title">TradeTapp Sample</span>
     <button id="login" style="visibility: hidden;">Login</button>
 </div>
-<div id="preview">
+<div id="welcome"><h1 class="text-center" style="padding-top: 10%">To see data, please login.</h1></div>
+<div id="preview" style="display: none">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
@@ -65,7 +66,31 @@
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <div class="card overflow-auto">
-                <h3 class="text-center">Lore ipsum</h3>
+                <div id="carouselQualification" class="carousel carousel-dark slide">
+                    <div class="carousel-inner" id="qualification_overview" >
+
+                    </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselQualification"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselQualification"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

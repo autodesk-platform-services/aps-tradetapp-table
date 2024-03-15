@@ -1,4 +1,639 @@
 const login = document.getElementById('login');
+
+const QUALIF_SAMPLE_DATA = {
+    "pagination": {
+        "cursorState": null,
+        "limit": 20,
+        "nextUrl": null,
+        "previousUrl": null
+    },
+    "results": [
+        {
+            "id": "602156a978c314006631b6c8",
+            "uniqueId": null,
+            "questionnaireVersion": "Primary Qualification",
+            "qualification": {
+                "status": "QUALIFIED_WITH_EXCEPTIONS",
+                "internalSingleLimit": 1000000,
+                "internalTotalLimit": 4000000,
+                "dateExpires": "2025-03-04T05:00:00.000Z",
+                "summary": "Please abide by the limits",
+                "denialReason": null,
+                "preExpirationStatus": null
+            },
+            "applicationStatus": "NOT_STARTED",
+            "applicationDetail": "RENEWAL",
+            "companyName": "Building Connected Test ",
+            "yearFounded": 1999,
+            "stateFounded": "Alabama",
+            "taxIdType": "US_FEIN",
+            "federalTaxId": "555555477",
+            "submissionCurrency": "USD",
+            "numberOfHomeOfficeEmployees": 1,
+            "numberOfFieldSupervisoryEmployees": 1,
+            "hasProfessionalLicenses": false,
+            "hasUnionAffiliations": false,
+            "hasParentCompany": true,
+            "parentCompanyName": "Testing Tests",
+            "currentEstimatedBacklog": 66666,
+            "insuranceBrokerContactName": "ABC",
+            "insuranceBrokerCompanyName": "ABC",
+            "insuranceBrokerContactPhone": "7777777777",
+            "insuranceBrokerContactEmail": "supertster1@gmail.com",
+            "suretyBrokerAgencyCompanyName": null,
+            "suretyBrokerContactName": null,
+            "suretyBrokerContactPhone": null,
+            "suretyCompanyName": null,
+            "suretySingleProjectBondingCapacity": null,
+            "suretyAggregateBondingCapacity": null,
+            "bankName": "Piggy Bank",
+            "bankLineOfCreditTotal": 6666,
+            "bankLineOfCreditOutstanding": 6666,
+            "bankContactName": "Pig-E-Bank",
+            "bankContactPhone": "2222222222",
+            "bankContactEmail": "test2@gmail.com",
+            "dateSubmitted": "2024-01-29T22:16:22.324Z",
+            "dateUpdated": "2024-03-04T22:26:46.893Z",
+            "csiCodesForWorkPerformed": [
+                {
+                    "primaryCode": "01",
+                    "secondaryCode": "12",
+                    "tertiaryCode": "19",
+                    "codeDescription": "Contract Interface"
+                }
+            ],
+            "regionsServed": [
+                {
+                    "region": "Alaska"
+                }
+            ],
+            "marketsServed": [
+                {
+                    "market": "Civic & Government"
+                }
+            ],
+            "completedReferences": [
+                {
+                    "projectName": "abc",
+                    "location": "Seattle, WA, United States of America",
+                    "yearCompleted": 2004,
+                    "value": 20,
+                    "scope": "High fives",
+                    "referenceContactCompany": "High fives R Us",
+                    "referenceContactName": "bob joe",
+                    "referenceContactPhone": "3333333333",
+                    "referenceContactEmail": "joebob@gmail.com",
+                    "isLargestProject": false
+                },
+                {
+                    "projectName": "yellow green red",
+                    "location": "Jacksonville, FL, United States of America",
+                    "yearCompleted": 2020,
+                    "value": 455,
+                    "scope": "stuff",
+                    "referenceContactCompany": "red",
+                    "referenceContactName": " blue",
+                    "referenceContactPhone": "1111111111",
+                    "referenceContactEmail": "redblue@gmail.com",
+                    "isLargestProject": false
+                },
+                {
+                    "projectName": "GoBlueRedGreenYellow",
+                    "location": "Pittsburgh, PA, United States of America",
+                    "yearCompleted": 2011,
+                    "value": 234523,
+                    "scope": "Flushing toilets",
+                    "referenceContactCompany": "Contact R us",
+                    "referenceContactName": "Yea Man",
+                    "referenceContactPhone": "2222222222",
+                    "referenceContactEmail": "supertster1@gmail.com",
+                    "isLargestProject": true
+                }
+            ],
+            "companyContacts": [
+                {
+                    "positionTitle": "tester",
+                    "contactName": "supertster1@gmail.com",
+                    "contactPhone": "5555555555",
+                    "contactEmail": "supertster1@gmail.com",
+                    "contactFax": null,
+                    "contactType": "COMPANY"
+                },
+                {
+                    "positionTitle": "tsteer",
+                    "contactName": "Tsteer1",
+                    "contactPhone": "4444444444",
+                    "contactEmail": "supertster3@gmail.com",
+                    "contactFax": null,
+                    "contactType": "PREQUAL"
+                }
+            ],
+            "insuranceCoverages": [
+                {
+                    "insuranceType": "AUTOMOBILE_LIABILITY",
+                    "carrier": null,
+                    "perOccurrenceLimit": null,
+                    "aggregateLimit": null,
+                    "policyExpirationDate": null,
+                    "isNotApplicable": true
+                },
+                {
+                    "insuranceType": "WORKERS_COMPENSATION",
+                    "carrier": null,
+                    "perOccurrenceLimit": null,
+                    "aggregateLimit": null,
+                    "policyExpirationDate": null,
+                    "isNotApplicable": true
+                },
+                {
+                    "insuranceType": "GENERAL_LIABILITY",
+                    "carrier": null,
+                    "perOccurrenceLimit": null,
+                    "aggregateLimit": null,
+                    "policyExpirationDate": null,
+                    "isNotApplicable": true
+                },
+                {
+                    "insuranceType": "UMBRELLA_EXCESS",
+                    "carrier": null,
+                    "perOccurrenceLimit": null,
+                    "aggregateLimit": null,
+                    "policyExpirationDate": null,
+                    "isNotApplicable": true
+                }
+            ],
+            "experienceModificationRatings": [
+                {
+                    "year": 2023,
+                    "experienceModificationRating": 0.0
+                },
+                {
+                    "year": 2022,
+                    "experienceModificationRating": 0.0
+                },
+                {
+                    "year": 2021,
+                    "experienceModificationRating": 0.0
+                }
+            ],
+            "osha300Results": [
+                {
+                    "year": 2013,
+                    "totalNumberDeathsBoxG": 0,
+                    "totalNumberCasesDaysAwayBoxH": 0,
+                    "totalNumberCasesRestrictionTransferBoxI": 0,
+                    "otherRecordableCasesBoxJ": 0,
+                    "totalHoursWorked": 0
+                },
+                {
+                    "year": 2022,
+                    "totalNumberDeathsBoxG": 0,
+                    "totalNumberCasesDaysAwayBoxH": 0,
+                    "totalNumberCasesRestrictionTransferBoxI": 0,
+                    "otherRecordableCasesBoxJ": 0,
+                    "totalHoursWorked": 0
+                },
+                {
+                    "year": 2021,
+                    "totalNumberDeathsBoxG": 0,
+                    "totalNumberCasesDaysAwayBoxH": 0,
+                    "totalNumberCasesRestrictionTransferBoxI": 0,
+                    "otherRecordableCasesBoxJ": 0,
+                    "totalHoursWorked": 0
+                }
+            ],
+            "certificates": [],
+            "unions": [],
+            "annualVolumeRevenues": [
+                {
+                    "year": 2023,
+                    "estimatedVolumeRevenue": 444444
+                }
+            ],
+            "professionalLicenses": [],
+            "companyOfficeAddresses": {
+                "pagination": {
+                    "cursorState": null,
+                    "limit": 50,
+                    "nextUrl": null,
+                    "previousUrl": null
+                },
+                "results": [
+                    {
+                        "isMainOffice": true,
+                        "address1": "5555 one two three road",
+                        "address2": "",
+                        "city": "kansas city",
+                        "state": "Missouri",
+                        "zipCode": "44444"
+                    }
+                ]
+            },
+            "customQuestions": {
+                "pagination": {
+                    "cursorState": null,
+                    "limit": 50,
+                    "nextUrl": null,
+                    "previousUrl": null
+                },
+                "results": [
+                    {
+                        "question": "This is a test",
+                        "section": "Financial",
+                        "textResponse": null,
+                        "numberResponse": null,
+                        "booleanResponse": false
+                    },
+                    {
+                        "question": "Test",
+                        "section": "General",
+                        "textResponse": null,
+                        "numberResponse": null,
+                        "booleanResponse": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": "5430e7bc5cdc2e0300dd8b78",
+            "uniqueId": null,
+            "questionnaireVersion": "Primary Qualification",
+            "qualification": {
+                "status": "QUALIFIED",
+                "internalSingleLimit": 900000,
+                "internalTotalLimit": 1200000,
+                "dateExpires": "2026-10-13T04:00:00.000Z",
+                "summary": "Updates new limits. Good to go",
+                "denialReason": null,
+                "preExpirationStatus": null
+            },
+            "applicationStatus": "NOT_STARTED",
+            "applicationDetail": "RENEWAL",
+            "companyName": "j3",
+            "yearFounded": 2017,
+            "stateFounded": "Zacatecas",
+            "taxIdType": "OTHER",
+            "federalTaxId": "87HKH89879SD",
+            "submissionCurrency": "USD",
+            "numberOfHomeOfficeEmployees": 2,
+            "numberOfFieldSupervisoryEmployees": 3,
+            "hasProfessionalLicenses": false,
+            "hasUnionAffiliations": false,
+            "hasParentCompany": true,
+            "parentCompanyName": "Autodesk",
+            "currentEstimatedBacklog": 344599,
+            "insuranceBrokerContactName": "Junie Frost",
+            "insuranceBrokerCompanyName": "Ewing-Leavitt",
+            "insuranceBrokerContactPhone": "2323333333",
+            "insuranceBrokerContactEmail": "junie@gmail.com",
+            "suretyBrokerAgencyCompanyName": "N/A",
+            "suretyBrokerContactName": "N/A",
+            "suretyBrokerContactPhone": "3333333333",
+            "suretyCompanyName": "N/A",
+            "suretySingleProjectBondingCapacity": null,
+            "suretyAggregateBondingCapacity": null,
+            "bankName": "0",
+            "bankLineOfCreditTotal": 3000000,
+            "bankLineOfCreditOutstanding": 100000,
+            "bankContactName": "Ruby",
+            "bankContactPhone": "2020202020",
+            "bankContactEmail": "ruby@gmail.com",
+            "dateSubmitted": "2024-02-08T18:05:16.682Z",
+            "dateUpdated": "2024-03-07T16:37:53.186Z",
+            "csiCodesForWorkPerformed": [
+                {
+                    "primaryCode": "00",
+                    "secondaryCode": "10",
+                    "tertiaryCode": "00",
+                    "codeDescription": "Solicitation"
+                },
+                {
+                    "primaryCode": "26",
+                    "secondaryCode": "00",
+                    "tertiaryCode": "00",
+                    "codeDescription": "Electrical"
+                }
+            ],
+            "regionsServed": [
+                {
+                    "region": "Other"
+                },
+                {
+                    "region": "Alabama"
+                },
+                {
+                    "region": "Alberta"
+                },
+                {
+                    "region": "Alaska"
+                },
+                {
+                    "region": "Zacatecas"
+                },
+                {
+                    "region": "Veracruz"
+                },
+                {
+                    "region": "Yucatán"
+                },
+                {
+                    "region": "Tlaxcala"
+                }
+            ],
+            "marketsServed": [
+                {
+                    "market": "Civic & Government"
+                }
+            ],
+            "completedReferences": [
+                {
+                    "projectName": "Test additional Project",
+                    "location": ", Yuc., Mexico",
+                    "yearCompleted": 2000,
+                    "value": 7,
+                    "scope": "1",
+                    "referenceContactCompany": "1",
+                    "referenceContactName": "Nimesh Keswani",
+                    "referenceContactPhone": "7323103991",
+                    "referenceContactEmail": "nimesh.keswani@autodesk.com",
+                    "isLargestProject": false
+                },
+                {
+                    "projectName": "Recent",
+                    "location": ", Yuc., Mexico",
+                    "yearCompleted": 2023,
+                    "value": 7,
+                    "scope": "lightsabers",
+                    "referenceContactCompany": "buildingconnected",
+                    "referenceContactName": "bob the builder",
+                    "referenceContactPhone": "1112223344",
+                    "referenceContactEmail": "bobthebuilder@aol.com",
+                    "isLargestProject": false
+                },
+                {
+                    "projectName": "First!",
+                    "location": "97050 Mérida, Yuc., Mexico",
+                    "yearCompleted": 2019,
+                    "value": 7,
+                    "scope": "asdf",
+                    "referenceContactCompany": "asdf",
+                    "referenceContactName": "adsf",
+                    "referenceContactPhone": "1231231234",
+                    "referenceContactEmail": "asdf2@afs.com",
+                    "isLargestProject": false
+                },
+                {
+                    "projectName": "Big",
+                    "location": "97050 Mérida, Yuc., Mexico",
+                    "yearCompleted": 2020,
+                    "value": 7,
+                    "scope": "asdf",
+                    "referenceContactCompany": "asdf",
+                    "referenceContactName": "asdf",
+                    "referenceContactPhone": "1231231234",
+                    "referenceContactEmail": "asdf@sdf.com",
+                    "isLargestProject": false
+                },
+                {
+                    "projectName": "Manhattan Building",
+                    "location": "New York, NY 10001, United States of America",
+                    "yearCompleted": 2020,
+                    "value": 1200000,
+                    "scope": "test",
+                    "referenceContactCompany": "Johnny",
+                    "referenceContactName": "Builder",
+                    "referenceContactPhone": "1914444444",
+                    "referenceContactEmail": "buildingconnected@gmail.com",
+                    "isLargestProject": false
+                },
+                {
+                    "projectName": "Manhattan Building",
+                    "location": "New York, NY 10001, United States of America",
+                    "yearCompleted": 2020,
+                    "value": 1200000,
+                    "scope": "test",
+                    "referenceContactCompany": "hello",
+                    "referenceContactName": "dgesfa",
+                    "referenceContactPhone": "1914444444",
+                    "referenceContactEmail": "kelly.ngai@autodesk.com",
+                    "isLargestProject": true
+                }
+            ],
+            "companyContacts": [
+                {
+                    "positionTitle": "b",
+                    "contactName": "a",
+                    "contactPhone": "6143139341",
+                    "contactEmail": "adam.j.page@autodesk.com",
+                    "contactFax": null,
+                    "contactType": "PREQUAL"
+                },
+                {
+                    "positionTitle": "Product Estimator",
+                    "contactName": "Miles Sandman",
+                    "contactPhone": "9191111111",
+                    "contactEmail": "b@tradetapp.com",
+                    "contactFax": "8184387838",
+                    "contactType": "COMPANY"
+                }
+            ],
+            "insuranceCoverages": [
+                {
+                    "insuranceType": "UMBRELLA_EXCESS",
+                    "carrier": "21st Century Assurance Company",
+                    "perOccurrenceLimit": null,
+                    "aggregateLimit": null,
+                    "policyExpirationDate": "2024-12-20",
+                    "isNotApplicable": false
+                },
+                {
+                    "insuranceType": "AUTOMOBILE_LIABILITY",
+                    "carrier": "21st Century Advantage Insurance Company",
+                    "perOccurrenceLimit": null,
+                    "aggregateLimit": null,
+                    "policyExpirationDate": "2024-12-06",
+                    "isNotApplicable": false
+                },
+                {
+                    "insuranceType": "GENERAL_LIABILITY",
+                    "carrier": null,
+                    "perOccurrenceLimit": null,
+                    "aggregateLimit": null,
+                    "policyExpirationDate": null,
+                    "isNotApplicable": true
+                },
+                {
+                    "insuranceType": "WORKERS_COMPENSATION",
+                    "carrier": null,
+                    "perOccurrenceLimit": null,
+                    "aggregateLimit": null,
+                    "policyExpirationDate": null,
+                    "isNotApplicable": true
+                }
+            ],
+            "experienceModificationRatings": [
+                {
+                    "year": 2020,
+                    "experienceModificationRating": 0.0
+                },
+                {
+                    "year": 2021,
+                    "experienceModificationRating": 2.0
+                },
+                {
+                    "year": 2022,
+                    "experienceModificationRating": 0.91
+                },
+                {
+                    "year": 2023,
+                    "experienceModificationRating": 0.9
+                },
+                {
+                    "year": 2024,
+                    "experienceModificationRating": 0.0
+                }
+            ],
+            "osha300Results": [
+                {
+                    "year": 2018,
+                    "totalNumberDeathsBoxG": 0,
+                    "totalNumberCasesDaysAwayBoxH": 0,
+                    "totalNumberCasesRestrictionTransferBoxI": 0,
+                    "otherRecordableCasesBoxJ": 0,
+                    "totalHoursWorked": 0
+                },
+                {
+                    "year": 2019,
+                    "totalNumberDeathsBoxG": 0,
+                    "totalNumberCasesDaysAwayBoxH": 0,
+                    "totalNumberCasesRestrictionTransferBoxI": 0,
+                    "otherRecordableCasesBoxJ": 0,
+                    "totalHoursWorked": 0
+                },
+                {
+                    "year": 2020,
+                    "totalNumberDeathsBoxG": 2,
+                    "totalNumberCasesDaysAwayBoxH": 13,
+                    "totalNumberCasesRestrictionTransferBoxI": 0,
+                    "otherRecordableCasesBoxJ": 3,
+                    "totalHoursWorked": 25
+                },
+                {
+                    "year": 2021,
+                    "totalNumberDeathsBoxG": 0,
+                    "totalNumberCasesDaysAwayBoxH": 0,
+                    "totalNumberCasesRestrictionTransferBoxI": 0,
+                    "otherRecordableCasesBoxJ": 0,
+                    "totalHoursWorked": 10000
+                },
+                {
+                    "year": 2022,
+                    "totalNumberDeathsBoxG": 0,
+                    "totalNumberCasesDaysAwayBoxH": 0,
+                    "totalNumberCasesRestrictionTransferBoxI": 0,
+                    "otherRecordableCasesBoxJ": 0,
+                    "totalHoursWorked": 0
+                }
+            ],
+            "certificates": [
+                {
+                    "id": "64e4e1f993f6540a351c36e4",
+                    "type": {
+                        "id": "6233ba2091bc5b006136b87c",
+                        "name": "GSA Schedule"
+                    },
+                    "agency": {
+                        "id": "6233ba2091bc5b006136b891",
+                        "name": "Alabama Unified Certification Program",
+                        "website": "https://www.dot.state.al.us/conweb/DBEProgram.html"
+                    },
+                    "number": "12345",
+                    "expiresAt": "2023-08-03T04:00:00.000Z",
+                    "fileName": "Screenshot 2024-03-07 at 2.00.38 PM.png"
+                },
+                {
+                    "id": "64ff2eb17a15d500509f7ffb",
+                    "type": {
+                        "id": "62f1452b8a07300080679c64",
+                        "name": "Minority Women-Owned Business Enterprise (M/WBE)"
+                    },
+                    "agency": {
+                        "id": "6233ba2091bc5b006136b878",
+                        "name": "United States Department of Transportation",
+                        "website": "https://www.transportation.gov/civil-rights/disadvantaged-business-enterprise"
+                    },
+                    "number": "2468",
+                    "expiresAt": "2023-09-18T19:00:00.000Z",
+                    "fileName": null
+                }
+            ],
+            "unions": [],
+            "annualVolumeRevenues": [
+                {
+                    "year": 2021,
+                    "estimatedVolumeRevenue": 1332
+                },
+                {
+                    "year": 2023,
+                    "estimatedVolumeRevenue": 1332
+                }
+            ],
+            "professionalLicenses": [],
+            "companyOfficeAddresses": {
+                "pagination": {
+                    "cursorState": null,
+                    "limit": 50,
+                    "nextUrl": null,
+                    "previousUrl": null
+                },
+                "results": [
+                    {
+                        "isMainOffice": true,
+                        "address1": "1234 Test St",
+                        "address2": "",
+                        "city": "San Francisco",
+                        "state": "Zacatecas",
+                        "zipCode": "23423"
+                    }
+                ]
+            },
+            "customQuestions": {
+                "pagination": {
+                    "cursorState": null,
+                    "limit": 50,
+                    "nextUrl": null,
+                    "previousUrl": null
+                },
+                "results": [
+                    {
+                        "question": "This is a test",
+                        "section": "Financial",
+                        "textResponse": null,
+                        "numberResponse": null,
+                        "booleanResponse": true
+                    },
+                    {
+                        "question": "Yes/No Detail Test",
+                        "section": "Financial",
+                        "textResponse": "NA",
+                        "numberResponse": null,
+                        "booleanResponse": true
+                    },
+                    {
+                        "question": "Test",
+                        "section": "General",
+                        "textResponse": null,
+                        "numberResponse": null,
+                        "booleanResponse": true
+                    }
+                ]
+            }
+        }
+    ]
+}
+
+
+
 try {
     const resp = await fetch('/api/auth/profile');
     if (resp.ok) {
@@ -15,9 +650,15 @@ try {
             };
         }
         console.log("login_ok")
+        document.getElementById("preview").style.display = "block";
+        document.getElementById("welcome").style.display = "none";
         fetch("http://localhost:8080/api/tradetapp/financials")
             .then(data => data.json())
             .then(data => createFinancialOverview(data))
+        // fetch("http://localhost:8080/api/tradetapp/qualifications")
+        //     .then(data => data.json())
+        //     .then(data => createQualificationOverview(data))
+        createQualificationOverview(QUALIF_SAMPLE_DATA)
 
     } else {
         login.innerText = 'Login';
@@ -390,3 +1031,278 @@ function createStatementInfo(data) {
     return statement_info;
 }
 
+
+
+
+/*Qualification*/
+
+function createQualificationOverview(data){
+    let financial_overview = document.getElementById("qualification_overview");
+    data["results"].forEach(company => {
+        let item = document.createElement("div");
+        item.className = "carousel-item";
+        item.appendChild(createQualificationItem(company));
+        financial_overview.appendChild(item);
+    })
+    financial_overview.children[0].className += " active";
+}
+
+function createCompanyInfoTable(data) {
+    const table_holder = document.createElement("div");
+    table_holder.className="table_holder";
+    const title = document.createElement("h3");
+    title.innerText = "Company details";
+    title.className = "text-center";
+
+    table_holder.appendChild(title);
+
+    const table = document.createElement("table");
+    table.className = "table table-striped"
+    table.innerHTML = `
+    <tbody>
+        <tr>
+            <th scope="row">Company Name</th>
+            <td>${data["companyName"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Year Founderd</th>
+            <td>${data["yearFounded"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">State Founded</th>
+            <td>${data["stateFounded"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Tax ID Type</th>
+            <td>${data["taxIdType"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Federal Tax ID</th>
+            <td>${data["federalTaxId"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Number of HO employees</th>
+            <td>${data["numberOfHomeOfficeEmployees"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Number of field employees</th>
+            <td>${data["numberOfFieldSupervisoryEmployees"]}</td>
+        </tr>
+        
+        <tr>
+            <th scope="row"></th>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <th scope="row">Bank Name</th>
+            <td>${data["bankName"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Bank contact name</th>
+            <td>${data["bankContactName"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Bank contact phone</th>
+            <td>${data["bankContactPhone"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Bank contact email</th>
+            <td>${data["bankContactEmail"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Bank line of credit total</th>
+            <td>${data["bankLineOfCreditTotal"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Bank line of credit outstanding</th>
+            <td>${data["bankLineOfCreditOutstanding"]}</td>
+        </tr>
+        <tr>
+            <th scope="row"></th>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row">Date submitted</th>
+            <td>${new Date(data["dateSubmitted"]).toDateString()}</td>
+        </tr>
+        <tr>
+            <th scope="row">Date updated</th>
+            <td>${new Date(data["dateUpdated"]).toDateString()}</td>
+        </tr>
+       
+    </tbody>
+    `
+    table_holder.appendChild(table);
+    return table_holder;
+}
+
+function createQualifStatusTable(data) {
+    const table_holder = document.createElement("div");
+    table_holder.className="table_holder";
+    const title = document.createElement("h3");
+    title.innerText = "Qualification details";
+    title.className = "text-center";
+
+    table_holder.appendChild(title);
+
+    const table = document.createElement("table");
+    table.className = "table table-striped"
+    table.innerHTML = `
+    <tbody>
+        <tr>
+            <th scope="row">Status</th>
+            <td>${data["status"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Summary</th>
+            <td>${data["summary"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Internal Single Limit</th>
+            <td>${data["internalSingleLimit"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Internal Total Limit</th>
+            <td>${data["internalTotalLimit"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Expiration Date</th>
+            <td>${new Date(data["dateExpires"]).toDateString()}</td>
+        </tr>
+       
+    </tbody>
+    `
+    table_holder.appendChild(table);
+    return table_holder;
+}
+
+function createReferenceTable(input) {
+    const table_holder = document.createElement("div");
+    table_holder.className="table_holder";
+    const title = document.createElement("h3");
+    title.innerText = "Completed References";
+    title.className = "text-center";
+    table_holder.appendChild(title);
+
+    const carusel = document.createElement("div");
+    carusel.className = "carousel carousel-dark slide";
+    carusel.id = "ref_carusel";
+    const carusel_inner = document.createElement("div");
+    carusel_inner.className = "carousel-inner";
+    carusel.appendChild(carusel_inner);
+
+    const button_prev = document.createElement("button");
+    button_prev.className="carousel-control-prev";
+    button_prev.type="button";
+    button_prev.setAttribute("data-bs-target", "#ref_carusel");
+    button_prev.setAttribute("data-bs-slide", "prev");
+    button_prev.innerHTML=`<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>`
+
+    const button_next = document.createElement("button");
+    button_next.className="carousel-control-next";
+    button_next.type="button";
+    button_next.setAttribute("data-bs-target", "#ref_carusel");
+    button_next.setAttribute("data-bs-slide", "next");
+    button_next.innerHTML=`<span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>`
+
+    carusel.appendChild(button_prev);
+    carusel.appendChild(button_next)
+
+    input.forEach(data => {
+        let item = document.createElement("div");
+        item.className = "carousel-item";
+        const table = document.createElement("table");
+        table.className = "table table-striped"
+        table.innerHTML = `
+        <tbody>
+            <tr>
+                <th scope="row">Project Name</th>
+                <td>${data["projectName"]}</td>
+            </tr>
+            <tr>
+                <th scope="row">Location</th>
+                <td>${data["location"]}</td>
+            </tr>
+            <tr>
+                <th scope="row">Year completed</th>
+                <td>${data["yearCompleted"]}</td>
+            </tr>
+            <tr>
+                <th scope="row">Value</th>
+                <td>${data["value"]}</td>
+            </tr>
+            <tr>
+                <th scope="row">Scope</th>
+                <td>${new Date(data["scope"]).toDateString()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Reference Contact Company</th>
+                <td>${new Date(data["referenceContactCompany"]).toDateString()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Reference Contact Name</th>
+                <td>${new Date(data["referenceContactName"]).toDateString()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Reference Contact Phone</th>
+                <td>${new Date(data["referenceContactPhone"]).toDateString()}</td>
+            </tr>
+            <tr>
+                <th scope="row">Reference Contact Email</th>
+                <td>${new Date(data["referenceContactEmail"]).toDateString()}</td>
+            </tr>
+             <tr>
+                <th scope="row">Is largest project</th>
+                <td>${new Date(data["isLargestProject"]).toDateString()}</td>
+            </tr>
+
+        </tbody>
+        `
+        item.appendChild(table);
+
+        carusel_inner.appendChild(item);
+    })
+
+    table_holder.appendChild(carusel);
+    return table_holder;
+}
+function createQualificationItem(data){
+    const table_holder = document.createElement("div");
+    table_holder.className="table_holder";
+    const title = document.createElement("h3");
+    title.innerText = data["companyName"];
+    table_holder.appendChild(title);
+    const info_table = document.createElement("table");
+    info_table.className = "table";
+    info_table.innerHTML = `
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Application Status</th>
+            <th scope="col">Application Detail</th>
+            <th scope="col">Questionnaire Version</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>${data["id"]}</td>
+            <td>${data["applicationStatus"]}</td>
+            <td>${data["applicationDetail"]}</td>
+            <td>${data["questionnaireVersion"]}</td>
+        </tr>
+    </tbody>
+    `
+    table_holder.appendChild(info_table);
+    table_holder.appendChild(createQualifStatusTable(data["qualification"]));
+    table_holder.appendChild(createCompanyInfoTable(data));
+    table_holder.appendChild(createReferenceTable(data["completedReferences"]));
+    // table_holder.appendChild(createInfoHolder(data));
+    // table_holder.appendChild(createStatementHolder(data["statements"]))
+    const spacer = document.createElement("div");
+    spacer.className="spacer";
+    table_holder.appendChild(spacer);
+    return table_holder;
+}
