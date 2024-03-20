@@ -1236,27 +1236,27 @@ function createReferenceTable(input) {
             </tr>
             <tr>
                 <th scope="row">Scope</th>
-                <td>${new Date(data["scope"]).toDateString()}</td>
+                <td>${data["scope"]}</td>
             </tr>
             <tr>
                 <th scope="row">Reference Contact Company</th>
-                <td>${new Date(data["referenceContactCompany"]).toDateString()}</td>
+                <td>${data["referenceContactCompany"]}</td>
             </tr>
             <tr>
                 <th scope="row">Reference Contact Name</th>
-                <td>${new Date(data["referenceContactName"]).toDateString()}</td>
+                <td>${data["referenceContactName"]}</td>
             </tr>
             <tr>
                 <th scope="row">Reference Contact Phone</th>
-                <td>${new Date(data["referenceContactPhone"]).toDateString()}</td>
+                <td>${data["referenceContactPhone"]}</td>
             </tr>
             <tr>
                 <th scope="row">Reference Contact Email</th>
-                <td>${new Date(data["referenceContactEmail"]).toDateString()}</td>
+                <td>${data["referenceContactEmail"]}</td>
             </tr>
              <tr>
                 <th scope="row">Is largest project</th>
-                <td>${new Date(data["isLargestProject"]).toDateString()}</td>
+                <td>${data["isLargestProject"]}</td>
             </tr>
 
         </tbody>
@@ -1266,6 +1266,7 @@ function createReferenceTable(input) {
         carusel_inner.appendChild(item);
     })
 
+    carusel_inner.children[0].className += " active"
     table_holder.appendChild(carusel);
     return table_holder;
 }

@@ -169,6 +169,16 @@ body, html {
     right: 20px;
 }
 
-.carousel-inner {
-    min-height: 300px;
+/*.carousel-inner {*/
+/*    min-height: 300px;*/
+/*}*/
+
+/*.carousel-item {*/
+/*    min-height: 300px;*/
+/*}*/
+
+#ref_carusel > .carousel-inner {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
