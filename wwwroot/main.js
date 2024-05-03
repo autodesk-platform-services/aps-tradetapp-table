@@ -52,8 +52,8 @@ const QUALIF_SAMPLE_DATA = {
             "bankContactName": "Pig-E-Bank",
             "bankContactPhone": "2222222222",
             "bankContactEmail": "test2@gmail.com",
-            "dateSubmitted": "2024-01-29T22:16:22.324Z",
-            "dateUpdated": "2024-03-04T22:26:46.893Z",
+            "submittedAt": "2024-01-29T22:16:22.324Z",
+            "updatedAt": "2024-03-04T22:26:46.893Z",
             "csiCodesForWorkPerformed": [
                 {
                     "primaryCode": "01",
@@ -298,8 +298,8 @@ const QUALIF_SAMPLE_DATA = {
             "bankContactName": "Ruby",
             "bankContactPhone": "2020202020",
             "bankContactEmail": "ruby@gmail.com",
-            "dateSubmitted": "2024-02-08T18:05:16.682Z",
-            "dateUpdated": "2024-03-07T16:37:53.186Z",
+            "submittedAt": "2024-02-08T18:05:16.682Z",
+            "updatedAt": "2024-03-07T16:37:53.186Z",
             "csiCodesForWorkPerformed": [
                 {
                     "primaryCode": "00",
@@ -821,7 +821,7 @@ function creatMetricsTable(data) {
             <th scope="row">Working Capital Year</th>
             <td>${data["workingCapitalYear"]}</td>
         </tr>
-       
+
     </tbody>
     `
     return table;
@@ -1024,7 +1024,7 @@ function createStatementInfo(data) {
             <th scope="row">Working Capital Turnover</th>
             <td>${data["workingCapitalTurnover"]}</td>
         </tr>
-        
+
     </tbody>
     `
     statement_info.appendChild(table);
@@ -1088,12 +1088,12 @@ function createCompanyInfoTable(data) {
             <th scope="row">Number of field employees</th>
             <td>${data["numberOfFieldSupervisoryEmployees"]}</td>
         </tr>
-        
+
         <tr>
             <th scope="row"></th>
             <td></td>
         </tr>
-        
+
         <tr>
             <th scope="row">Bank Name</th>
             <td>${data["bankName"]}</td>
@@ -1124,13 +1124,13 @@ function createCompanyInfoTable(data) {
         </tr>
         <tr>
             <th scope="row">Date submitted</th>
-            <td>${new Date(data["dateSubmitted"]).toDateString()}</td>
+            <td>${new Date(data["submittedAt"]).toDateString()}</td>
         </tr>
         <tr>
             <th scope="row">Date updated</th>
-            <td>${new Date(data["dateUpdated"]).toDateString()}</td>
+            <td>${new Date(data["updatedAt"]).toDateString()}</td>
         </tr>
-       
+
     </tbody>
     `
     table_holder.appendChild(table);
@@ -1170,7 +1170,7 @@ function createQualifStatusTable(data) {
             <th scope="row">Expiration Date</th>
             <td>${new Date(data["dateExpires"]).toDateString()}</td>
         </tr>
-       
+
     </tbody>
     `
     table_holder.appendChild(table);
