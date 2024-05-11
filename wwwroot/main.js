@@ -4,6 +4,7 @@ const QUALIF_SAMPLE_DATA = {
     "pagination": {
         "cursorState": null,
         "limit": 20,
+        "totalResults": 2,
         "nextUrl": null,
         "previousUrl": null
     },
@@ -215,6 +216,7 @@ const QUALIF_SAMPLE_DATA = {
                 "pagination": {
                     "cursorState": null,
                     "limit": 50,
+                    "totalResults": 1,
                     "nextUrl": null,
                     "previousUrl": null
                 },
@@ -233,6 +235,7 @@ const QUALIF_SAMPLE_DATA = {
                 "pagination": {
                     "cursorState": null,
                     "limit": 50,
+                    "totalResults": 2,
                     "nextUrl": null,
                     "previousUrl": null
                 },
@@ -583,6 +586,7 @@ const QUALIF_SAMPLE_DATA = {
                 "pagination": {
                     "cursorState": null,
                     "limit": 50,
+                    "totalResults": 1,
                     "nextUrl": null,
                     "previousUrl": null
                 },
@@ -601,6 +605,7 @@ const QUALIF_SAMPLE_DATA = {
                 "pagination": {
                     "cursorState": null,
                     "limit": 50,
+                    "totalResults": 3,
                     "nextUrl": null,
                     "previousUrl": null
                 },
