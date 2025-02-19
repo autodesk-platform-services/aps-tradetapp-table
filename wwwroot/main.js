@@ -24,7 +24,9 @@ const QUALIF_SAMPLE_DATA = {
             },
             "applicationStatus": "NOT_STARTED",
             "applicationDetail": "RENEWAL",
-            "companyName": "Building Connected Test ",
+            "companyName": "Building Connected Test",
+            "companyTaxName": "Building Connected Inc.",
+            "doingBusinessAsName": "Building Connected Group",
             "yearFounded": 1999,
             "stateFounded": "Alabama",
             "taxIdType": "US_FEIN",
@@ -1068,6 +1070,14 @@ function createCompanyInfoTable(data) {
         <tr>
             <th scope="row">Company Name</th>
             <td>${data["companyName"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Company Tax Name</th>
+            <td>${data["companyTaxName"]}</td>
+        </tr>
+        <tr>
+            <th scope="row">Company doing-business-as Name</th>
+            <td>${data["doingBusinessAsName"]}</td>
         </tr>
         <tr>
             <th scope="row">Year Founderd</th>
